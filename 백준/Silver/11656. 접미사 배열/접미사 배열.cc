@@ -1,22 +1,20 @@
 #include <iostream>
-#include <string>
-#include <vector>
 #include <algorithm>
 
 int main() {
     std::string S;
     std::cin >> S;
     
-    std::vector<std::string> v;
+    std::string arr[S.length()];
     
     for (int i = 0; i < S.length(); i++) {
         std::string sub = S.substr(i, S.length() - i);
-        v.push_back(sub);
+        arr[i] = sub;
     }
     
-    std::sort(v.begin(), v.end());
+    std::sort(arr, arr + S.length());
     
-    for (int i = 0; i < v.size(); i++) {
-        std::cout << v[i] << '\n';
+    for (int i = 0; i < S.length(); i++) {
+        std::cout << arr[i] << '\n';
     }
 }
